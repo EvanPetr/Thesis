@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ConApi</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="beehive">beehive</string>
+    <string name="textview">Μελίσσι 1</string>
+    <string name="subtextview">Περιγραφή</string>
+</resources>

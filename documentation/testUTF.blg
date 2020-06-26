@@ -1,0 +1,16 @@
+[0] Config.pm:300> INFO - This is Biber 0.9.9
+[0] Config.pm:303> INFO - Logfile is 'testUTF.blg'
+[1] biber-darwin:145> INFO - === Î¤ÏÎ¹ ÎÎ¿Îµ  5, 2013, 18:48:19
+[1] Biber.pm:271> INFO - Reading 'testUTF.bcf'
+[15] Biber.pm:586> INFO - Found 6 citekeys in bib section 0
+[24] Biber.pm:2585> INFO - Processing bib section 0
+[40] Biber.pm:2677> INFO - Looking for bibtex format file 'testUTF.bib' for section 0
+[43] bibtex.pm:833> INFO - Decoding LaTeX character macros into UTF-8
+[63] bibtex.pm:837> INFO - Finished Decoding LaTeX character macros into UTF-8
+[64] bibtex.pm:708> INFO - Found BibTeX data source 'testUTF.bib'
+[116] Biber.pm:2480> INFO - Sorting list 'MAIN' keys
+[116] Biber.pm:2484> INFO - No sort tailoring available for locale 'el_GR.UTF-8'
+[132] Biber.pm:2480> INFO - Sorting list 'SHORTHANDS' keys
+[132] Biber.pm:2484> INFO - No sort tailoring available for locale 'el_GR.UTF-8'
+[145] bbl.pm:427> INFO - Writing 'testUTF.bbl' with encoding 'UTF-8'
+[145] bbl.pm:498> INFO - Output to testUTF.bbl

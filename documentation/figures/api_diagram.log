@@ -1,0 +1,24 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=mptopdf 2020.5.20)  25 JUN 2020 10:49
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**\relax api_diagram.2
+ (./api_diagram.2{d:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+) [warning: the width is less than 1in]
+[warning: the height is less than 1in] [1] 
+Here is how much of TeX's memory you used:
+ 34 strings out of 496699
+ 339 string characters out of 6201015
+ 4016749 words of memory out of 9001956
+ 1691 multiletter control sequences out of 15000+600000
+ 1085 words of font info for 1 font, out of 8000000 for 9000
+ 0 hyphenation exceptions out of 8191
+ 10i,3n,7p,125b,234s stack positions out of 5000i,500n,10000p,200000b,80000s
+{d:/texlive/2020/texmf-dist/fonts/enc
+/dvips/base/8r.enc}<d:/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
+>
+Output written on api_diagram.pdf (1 page, 5264 bytes).
+PDF statistics:
+ 13 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 7 words of extra memory for PDF output out of 10000 (max. 10000000)
+
