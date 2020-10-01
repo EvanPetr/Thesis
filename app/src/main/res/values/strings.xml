@@ -5,4 +5,12 @@
     <string name="beehive">beehive</string>
     <string name="textview">Μελίσσι 1</string>
     <string name="subtextview">Περιγραφή</string>
+    <string name="melissi">Μελίσσι</string>
+    <string name="add_beehive">Add Beehive</string>
+    <string name="new_beehive_check">Νέος Έλεγχος</string>
+    <string name="hint_word">Αριθμός Μελισσιού</string>
+    <string name="button_save">Save</string>
+    <string name="empty_not_saved">Word not saved because it is empty.</string>
+    <string name="enter_date">Ηλικία βασίλισσας</string>
+    <string name="enter_check_date">Ημερομηνία ελέγχου</string>
 </resources>

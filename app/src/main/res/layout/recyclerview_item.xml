@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
@@ -11,7 +10,7 @@
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:contentDescription="@string/beehive"
-        android:src="@android:drawable/ic_menu_sort_by_size" />
+        android:src="@drawable/ic_beehive" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,13 +18,10 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/beehive_text"
+            android:id="@+id/textView"
+            style="@style/beehive_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/textview"
-            android:textColor="#000000"
-            android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
