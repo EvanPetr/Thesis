@@ -60,10 +60,4 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}Σχεδίαση Βιβλιοθήκης}{24}{chapter.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Sequence Diagram}{26}{section.5.1}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}State Diagram}{26}{section.5.2}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Component Diagram}{26}{section.5.3}%
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Γλωσσάρι}{28}{chapter*.11}%
+\contentsline {chapter}{Γλωσσάρι}{26}{chapter*.11}%
