@@ -9,10 +9,12 @@ import java.util.List;
 import java.util.concurrent.BlockingQueue;
 
 public class MicrophoneRecorder extends Thread {
+    private static final int AUDIO_SOURCE = MediaRecorder.AudioSource.UNPROCESSED;
     private static final int RECORDER_SAMPLE_RATE = 16000;
     private static final int RECORDER_CHANNELS = AudioFormat.CHANNEL_IN_MONO;
     private static final int RECORDER_AUDIO_ENCODING = AudioFormat.ENCODING_PCM_16BIT;
-    private static int BYTES_PER_BUFFER = 6400;
+//    private static int BYTES_PER_BUFFER = 6400; // ~400ms
+    private static int BYTES_PER_BUFFER = 1600; // ~100ms
     private static AudioRecord audioRecord;
     public static volatile List<BlockingQueue<byte[]>> blockingQueues;
 
@@ -37,7 +39,7 @@ public class MicrophoneRecorder extends Thread {
     }
 
     public static void main() {
-        audioRecord = new AudioRecord(MediaRecorder.AudioSource.MIC,
+        audioRecord = new AudioRecord(AUDIO_SOURCE,
                 RECORDER_SAMPLE_RATE, RECORDER_CHANNELS,
                 RECORDER_AUDIO_ENCODING, BYTES_PER_BUFFER);
         blockingQueues = new ArrayList<>();

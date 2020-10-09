@@ -113,6 +113,7 @@ public class InfiniteStreamRecognize extends AsyncTask<InfiniteStreamRecognizeAr
         return StreamingRecognitionConfig.newBuilder()
                 .setConfig(recognitionConfig)
                 .setInterimResults(true)
+//                .setSingleUtterance(true)
                 .build();
     }
 
@@ -204,7 +205,7 @@ public class InfiniteStreamRecognize extends AsyncTask<InfiniteStreamRecognizeAr
                 }
 
                 public void onError(Throwable t) {
-                    System.out.println("ERRRORRRR");
+                    System.out.println(t.getMessage());
                 }
             };
             clientStream = client.streamingRecognizeCallable().splitCall(responseObserver);
