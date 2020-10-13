@@ -108,7 +108,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {7.4.3}Επικοινωνία με την υπηρεσία}{47}{subsection.7.4.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Σχεδίαση Βιβλιοθήκης}{48}{chapter.8}%
+\contentsline {chapter}{\numberline {8}Σχεδίαση Βιβλιοθήκης SpeechToCommand}{48}{chapter.8}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {8.1}Διάγραμμα κλάσεων}{49}{section.8.1}%
 \defcounter {refsection}{0}\relax 
@@ -116,4 +116,16 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {8.3}Διάγραμμα συστατικών}{51}{section.8.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Γλωσσάρι}{52}{chapter*.12}%
+\contentsline {chapter}{\numberline {9}Ανάπτυξη βιβλιοθήκης SpeechToCommand}{52}{chapter.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.1}Καταγραφή Μικροφώνου}{52}{section.9.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.2}Speech-to-Text API αναγνώριση ροής}{52}{section.9.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.3}Εντολή}{53}{section.9.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.4}Εκτελεστής Εντολών}{53}{section.9.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.5}Ταιριαστής Εντολών}{53}{section.9.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Γλωσσάρι}{54}{chapter*.12}%
