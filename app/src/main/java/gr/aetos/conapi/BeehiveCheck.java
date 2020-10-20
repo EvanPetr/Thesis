@@ -38,7 +38,8 @@ public class BeehiveCheck {
 
     public int beehiveId;
 
-    public BeehiveCheck(String date, int frames, int population, int progeny, int honey, int pollen, int beehiveId){
+    public BeehiveCheck(int id, String date, int frames, int population, int progeny, int honey, int pollen, int beehiveId, String note){
+        this.id = id;
         this.date = date;
         this.frames = frames;
         this.population = population;
@@ -46,5 +47,6 @@ public class BeehiveCheck {
         this.honey = honey;
         this.pollen = pollen;
         this.beehiveId = beehiveId;
+        this.note = note;
     }
 }

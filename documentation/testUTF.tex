@@ -6,19 +6,35 @@
 \usepackage[utf8]{inputenc}
 \usepackage{array}
 \usepackage{hyperref}
-\usepackage{graphicx}
-%\usepackage{natbib}
+\usepackage{float,graphicx}
 \usepackage{listings} \DeclareGraphicsRule{*}{mps}{*}{}
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 \setcounter{tocdepth}{4}
 \setcounter{secnumdepth}{4}
+\usepackage{xcolor}   % for \textcolor
+\usepackage{color}
+\usepackage{listings}
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
+\definecolor{ppurple}{RGB}{102,0,102}
 \lstset{
-  basicstyle=\ttfamily,
+  basicstyle=\fontsize{9}{10}\selectfont\ttfamily,
+  texcl=true,
+  extendedchars=true,
   columns=fullflexible,
   frame=single,
   breaklines=true,
-  postbreak=\mbox{$\hookrightarrow$}\space}
-%Τα παρακάτω είναι υποχρεωτικά:
+  showstringspaces=false
+  commentstyle=\texcolor{gray},
+  keywordstyle=\textcolor{blue},
+  stringstyle=\textcolor{purple},
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+  numberstyle=\footnotesize,
+  numbers=left,
+  backgroundcolor=\color{gray!10}
+}
 
 \renewcommand{\thesistitle}{Ανάπτυξη βιβλιοθήκης που επιτρέπει τον έλεγχο εφαρμογών μέσω φωνητικών εντολών}
 \renewcommand{\thesisauthor}{Πετρόπουλος Ευάγγελος (3785)}
@@ -28,13 +44,6 @@
 \renewcommand{\thesismonth}{Μάϊος}
 \renewcommand{\thesisyear}{2020}
 
-% Μόνο αν η συγγραφέας είναι γυναίκα 
-%\renewcommand{\thesisauthorsex}{female} %if author is female
-
-%Μόνο αν οι συγγραφείς είναι δύο:
-%\renewcommand{\thesisSecondAuthor}{Κάποιου άλλου (200)}
-%\renewcommand{\thesisSecondAuthorabbrv}{K. άλλος}
-%\renewcommand{\thesisSecondAuthorInitials}{ΚΑ}
 % Η βιβλιογραφία
 \addbibresource{testUTF.bib}
 
@@ -43,12 +52,7 @@
 \Titlepage
 \Declarationpage
 \begin{Abstract}
-  Οι μελισσοκόμοι καταγράφουν σημειώσεις για τα μελίσσια που ελέγχουν αλλά πολλές φορές δεν
-  προλαβαίνουν επειδή ο αριθμός των μελισσιών είναι μεγάλος ή δουλέυουν μόνοι τους και πρέπει να
-  σταματάνε την εργασία για να καταγράψουν τις σημειώσεις.Η εφαρμογή που αναπτύξαμε και ονομάζεται
-  ConApi (Contemporary Apiculture) υλοποιεί ένα σύστημα φωνητικών εντολών που βοηθάνε τον
-  μελισσοκόμο στην καταγραφή των σημειώσεων χωρίς την χρήση της συσκευής με τα χέρια παρά μονο της
-  φωνής.
+  Οι μελισσοκόμοι καταγράφουν σημειώσεις για τα μελίσσια που ελέγχουν αλλά πολλές φορές δεν προλαβαίνουν επειδή ο αριθμός των μελισσιών είναι μεγάλος ή δουλεύουν μόνοι τους και πρέπει να σταματάνε την εργασία για να καταγράψουν τις σημειώσεις.Η εφαρμογή που αναπτύξαμε και ονομάζεται ConApi (Contemporary Apiculture) υλοποιεί ένα σύστημα φωνητικών εντολών που βοηθάνε τον μελισσοκόμο στην καταγραφή των σημειώσεων χωρίς την χρήση της συσκευής με τα χέρια παρά μονο της φωνής.
 \end{Abstract}
 \tableofcontents
 
@@ -56,25 +60,12 @@
 \listoftables
 \listoffigures
 
-%Προαιρετικά
-\begin{Preface}
-Εδώ μπορεί να μπει πρόλογος. (Δεν είναι απαραίτητο).
-\end{Preface}
 
 %Προαιρετικά
 \begin{Acknowledgement}
-Ευχαριστίες (στο μπαμπά, στη μαμά, κτλ)
+Θα ήθελα να ευχαριστήσω την οικογένεια μου, συγκεκριμένα τους γονείς μου Κωνσταντίνο και Μαρία, τον αδερφό μου Σπύρο και την αδερφή μου Ειρήνη για την στήριξη όλων αυτών των χρόνων. Επίσης ευχαριστώ θερμά τον επιβλέποντα καθηγητή μου, κύριο Νίκο Πεταλίδη, για όλες τις συμβουλές και την καθοδήγηση που μου παρείχε, όχι μόνο κατά την διάρκεια εκπόνησης της εργασίας αλλά και πριν.
 \end{Acknowledgement}
 
-%Προαιρετικά
-\begin{Definitions}
-Ορισμοί εννοιών που μπορεί να είναι χρήσιμοι. Για παράδειγμα:
-
-\begin{description}
-\item [\LaTeX] Σύστημα στοιχειοθεσίας κειμένων
-\end{description}
-
-\end{Definitions}
 
 %Από εδώ αρχίζει το κείμενό σας
 \chapter{Εισαγωγή}\label{ch:εισαγωγή}
@@ -98,7 +89,13 @@
 \noindent
 \textbf{Κεφάλαιο 2}\quad Παρουσίαση έλεγχου μελισσιών και χειρόγραφες σημειώσεις.\newline
 \textbf{Κεφάλαιο 3}\quad Εφαρμογή και φωνητικές εντολές.\newline
-\textbf{Κεφάλαιο 4}\quad Speech-to-Text API.
+\textbf{Κεφάλαιο 4}\quad Speech-to-Text APIs.\newline
+\textbf{Κεφάλαιο 5}\quad Επιλογή Speech-to-Text API.\newline
+\textbf{Κεφάλαιο 6}\quad Γενική ιδέα Speech-to-Text API.\newline
+\textbf{Κεφάλαιο 7}\quad Παράδειγμα χρήσης Speech-to-Text API.\newline
+\textbf{Κεφάλαιο 8}\quad Σχεδίαση και ανάπτυξη βιβλιοθήκης.\newline
+\textbf{Κεφάλαιο 9}\quad Μελισσοκομική εφαρμογή.\newline
+\textbf{Κεφάλαιο 10}\quad Συμπεράσματα.
 
 \chapter{Έλεγχος μελισσιών και χειρόγραφες σημειώσεις}
 \label{ch:έλεγχος-μελισσιών-και-χειρόγραφες-σημειώσεις}
@@ -503,7 +500,7 @@ Speech-to-Text, πώς να δημιουργήσετε αυτά τα αιτήμ�
 Για να καθορίσετε ένα μοντέλο αναγνώρισης ομιλίας, συμπεριλάβετε το πεδίο μοντέλου στο αντικείμενο RecognitionConfig για το αίτημά σας, καθορίζοντας το μοντέλο που θέλετε να χρησιμοποιήσετε.
 
 Το Speech-to-Text μπορεί να χρησιμοποιήσει τους ακόλουθους τύπους μοντέλων μηχανικής μάθησης για τη μεταγραφή των αρχείων ήχου.
-\begin{table}[!h]
+\begin{table}[H]
   \centering
   \caption{Μοντέλα μηχανικής μάθησης}
   \begin{tabularx}{\linewidth}[h]{|p{2cm}|p{4cm}|X|}
@@ -746,18 +743,18 @@ public class QuickstartSample {
 \end{lstlisting}
 \subsection{Επικοινωνία με την υπηρεσία}
 \includegraphics{uml/library_service_sequence_diagram.pdf}
-\chapter{Σχεδίαση Βιβλιοθήκης SpeechToCommand}
+\chapter{Βιβλιοθήκη Speech-to-Command}
+\section{Σχεδίαση Βιβλιοθήκης}
 \label{ch:σχεδίαση-βιβλιοθήκης}
-\newpage
-\section{Διάγραμμα κλάσεων}\label{sec:διάγραμμα-κλάσεων}
+\subsection{Διάγραμμα κλάσεων}\label{sec:διάγραμμα-κλάσεων}
 \includegraphics[scale=0.5]{uml/library_uml_class_diagram.pdf}
 \newpage
-\section{Διάγραμμα σεναρίων χρήσης}\label{sec:διάγραμμα-σεναρίων-χρήσης}
+\subsection{Διάγραμμα σεναρίων χρήσης}\label{sec:διάγραμμα-σεναρίων-χρήσης}
 \includegraphics[scale=0.5]{uml/library_uml_use_case_diagram.pdf}
 \newpage
-\section{Διάγραμμα συστατικών}\label{sec:διάγραμμα-συστατικών}
+\subsection{Διάγραμμα συστατικών}\label{sec:διάγραμμα-συστατικών}
 \includegraphics{uml/library_uml_component_diagram.pdf}
-\chapter{Ανάπτυξη βιβλιοθήκης SpeechToCommand}
+\section{Ανάπτυξη βιβλιοθήκης}
 Η ανάπτυξη της βιβλιοθήκης έγινε στην γλώσσα προγραμματισμού Java για Android πλατφόρμα.Τα μέροι της βιβλιοθήκης είναι τα παρακάτω:
 \begin{enumerate}
   \item Καταγραφή μικρόφωνου
@@ -766,74 +763,630 @@ public class QuickstartSample {
   \item Εκτελεστής εντολών
   \item Ταιριαστής εντολών
 \end{enumerate}
-\section{Καταγραφή Μικροφώνου}
+\subsection{Καταγραφή Μικροφώνου}
 Η καταγραφή του μικροφώνου τρέχει σε ένα νήμα στην εφαρμογή, αποθηκεύοντας τα καταγεγραμμένα δεδομένα σε μία κοινόχρηστη ουρά.
-\section{Speech-to-Text API αναγνώριση ροής}
+\begin{center}
+	Δείγμα κώδικα:
+	\begin{lstlisting}[language=java]
+public class MicrophoneRecorder extends Thread {
+    private static final int AUDIO_SOURCE = MediaRecorder.AudioSource.UNPROCESSED;
+    private static final int RECORDER_SAMPLE_RATE = 16000;
+    private static final int RECORDER_CHANNELS = AudioFormat.CHANNEL_IN_MONO;
+    private static final int RECORDER_AUDIO_ENCODING = AudioFormat.ENCODING_PCM_16BIT;
+    private static final int BYTES_PER_BUFFER = 1600; // ~100ms
+    private static AudioRecord audioRecord;
+    public static volatile List<BlockingQueue<byte[]>> blockingQueues;
+
+    @Override
+    public void run() {
+        audioRecord.startRecording();
+        byte[] data = new byte[BYTES_PER_BUFFER];
+        while (true) {
+            try {
+                int numBytesRead = audioRecord.read(data, 0, data.length);
+                if ((numBytesRead <= 0)) {
+                    continue;
+                }
+                for(BlockingQueue<byte[]> blockingQueue : blockingQueues){
+                    blockingQueue.put(data.clone());
+                }
+            } catch (InterruptedException e) {
+                System.out.println("Microphone input buffering interrupted : " + e.getMessage());
+            }
+        }
+    }
+
+    public static void main() {
+        audioRecord = new AudioRecord(AUDIO_SOURCE,
+                RECORDER_SAMPLE_RATE, RECORDER_CHANNELS,
+                RECORDER_AUDIO_ENCODING, BYTES_PER_BUFFER);
+        blockingQueues = new ArrayList<>();
+        new MicrophoneRecorder().start();
+    }
+}
+	\end{lstlisting}
+\end{center}
+\subsection{Speech-to-Text API αναγνώριση ροής}
 Η αναγνώριση ροής τρέχει σε ένα ασύχρονο έργο στο παρασκήνιο, διαβάζοντας τα καταγεγραμμένα δεδομένα από την ουρά και κάνοντας συνέχες αιτήσεις στην υπηρεσία Speech-to-Text. Η υπηρεσία ανταποκρίνεται συνεχώς μέχρις ώτου έχει το τελικό αποτέλεσμα της μεταγραφής σε κείμενο της καταγεγραμμένης φωνητικής ομιλίας. Ο ταιριαστής των εντολών λαμβάνει την μεταγραφή ώστε να ταιριάξει το κείμενο.
-\section{Εντολή}
+\begin{center}
+	Δείγμα κώδικα:
+	\begin{lstlisting}[language=java]
+public class InfiniteStreamRecognize extends AsyncTask<InfiniteStreamRecognizeArguments, Void, Void> {
+
+    private static final int RECORDER_SAMPLE_RATE = 16000;
+    private static final String LANGUAGE_CODE = "el-GR";
+    private static final String MODEL = "command_and_search";
+
+    private static final int STREAMING_LIMIT = 290000; // ~5 minutes
+
+    public static final String RED = "\033[0;31m";
+    public static final String GREEN = "\033[0;32m";
+    public static final String YELLOW = "\033[0;33m";
+
+    private static int restartCounter = 0;
+    private static ArrayList<ByteString> audioInput = new ArrayList<>();
+    private static ArrayList<ByteString> lastAudioInput = new ArrayList<>();
+    private static int resultEndTimeInMS = 0;
+    private static int isFinalEndTime = 0;
+    private static int finalRequestEndTime = 0;
+    private static boolean newStream = true;
+    private static double bridgingOffset = 0;
+    private static boolean lastTranscriptWasFinal = false;
+    private static StreamController referenceToStreamController;
+    private static SpeechSettings speechSettings;
+
+    // Creating shared object
+    private static volatile BlockingQueue<byte[]> sharedQueue = new LinkedBlockingQueue<>();
+    private static volatile List<TranscriptMatcher> transcriptMatcherList = new ArrayList<>();
+    private static List<String> phrases = new ArrayList<>();
+    private static int[] phrasesPreviousCurrentSizes = {0, 0};
+
+
+    private static void setup(InputStream is) throws IOException {
+        MicrophoneRecorder.blockingQueues.add(sharedQueue);
+        GoogleCredentials credentials = GoogleCredentials.fromStream(is);
+        FixedCredentialsProvider credentialsProvider = FixedCredentialsProvider.create(credentials);
+
+        speechSettings = SpeechSettings.newBuilder()
+                .setCredentialsProvider(credentialsProvider)
+                .build();
+        googleSTTSettings();
+
+    }
+
+    private static StreamingRecognitionConfig googleSTTSettings(){
+        phrasesPreviousCurrentSizes = new int[]{phrases.size(), phrases.size()};
+        SpeechContext sc = SpeechContext.newBuilder().addAllPhrases(phrases).build();
+
+        RecognitionMetadata rm = RecognitionMetadata.newBuilder()
+                .setInteractionType(RecognitionMetadata.InteractionType.VOICE_COMMAND)
+                .setMicrophoneDistance(RecognitionMetadata.MicrophoneDistance.NEARFIELD)
+                .setOriginalMediaType(RecognitionMetadata.OriginalMediaType.AUDIO)
+                .setRecordingDeviceType(RecognitionMetadata.RecordingDeviceType.SMARTPHONE)
+                .build();
+
+        RecognitionConfig recognitionConfig = RecognitionConfig.newBuilder()
+                .setEncoding(RecognitionConfig.AudioEncoding.LINEAR16)
+                .setSampleRateHertz(RECORDER_SAMPLE_RATE)
+                .setLanguageCode(LANGUAGE_CODE)
+                .setModel(MODEL)
+                .addSpeechContexts(sc)
+                .setMetadata(rm)
+                .build();
+
+        return StreamingRecognitionConfig.newBuilder()
+                .setConfig(recognitionConfig)
+                .setInterimResults(true)
+//                .setSingleUtterance(true)
+                .build();
+    }
+
+    public static void addTranscriptMatcher(TranscriptMatcher transcriptMatcher){
+        transcriptMatcherList.add(transcriptMatcher);
+        for(Command command: transcriptMatcher.commands){
+            phrases.addAll(command.getPhrases());
+        }
+        phrasesPreviousCurrentSizes = new int[]{phrasesPreviousCurrentSizes[1], phrases.size()};
+    }
+
+    public static void removeTranscriptMatcher(TranscriptMatcher transcriptMatcher){
+        transcriptMatcherList.remove(transcriptMatcher);
+        for(Command command: transcriptMatcher.commands){
+            phrases.removeAll(command.getPhrases());
+        }
+        phrasesPreviousCurrentSizes = new int[]{phrasesPreviousCurrentSizes[1], phrases.size()};
+    }
+
+    public static void main(InputStream is) {
+        try {
+            setup(is);
+            infiniteStreamingRecognize();
+        } catch (Exception e) {
+            System.out.println("Exception caught: " + e);
+        }
+    }
+
+    public static String convertMillisToDate(double milliSeconds) {
+        long millis = (long) milliSeconds;
+        DecimalFormat format = new DecimalFormat();
+        format.setMinimumIntegerDigits(2);
+        return String.format(
+                "%s:%s /",
+                format.format(TimeUnit.MILLISECONDS.toMinutes(millis)),
+                format.format(
+                        TimeUnit.MILLISECONDS.toSeconds(millis)
+                                - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis))));
+    }
+
+    /** Performs infinite streaming speech recognition */
+    public static void infiniteStreamingRecognize() throws Exception {
+        ResponseObserver<StreamingRecognizeResponse> responseObserver;
+
+        try (SpeechClient client = SpeechClient.create(speechSettings)) {
+            ClientStream<StreamingRecognizeRequest> clientStream;
+            responseObserver = new ResponseObserver<StreamingRecognizeResponse>() {
+                ArrayList<StreamingRecognizeResponse> responses = new ArrayList<>();
+
+                public void onStart(StreamController controller) {
+                    referenceToStreamController = controller;
+                }
+
+                public void onResponse(StreamingRecognizeResponse response) {
+                    responses.add(response);
+                    StreamingRecognitionResult result = response.getResultsList().get(0);
+                    Duration resultEndTime = result.getResultEndTime();
+                    resultEndTimeInMS =
+                            (int)
+                                    ((resultEndTime.getSeconds() * 1000) + (resultEndTime.getNanos() / 1000000));
+                    double correctedTime =
+                            resultEndTimeInMS - bridgingOffset + (STREAMING_LIMIT * restartCounter);
+
+                    SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
+                    if (result.getIsFinal()) {
+                        for(TranscriptMatcher transcriptMatcher : transcriptMatcherList){
+                            transcriptMatcher.match(alternative.getTranscript().trim());
+                        }
+                        System.out.print(GREEN);
+                        System.out.print("\033[2K\r");
+                        System.out.printf(
+                                "%s: %s [confidence: %.2f]\n",
+                                convertMillisToDate(correctedTime),
+                                alternative.getTranscript(),
+                                alternative.getConfidence());
+                        isFinalEndTime = resultEndTimeInMS;
+                        lastTranscriptWasFinal = true;
+                    } else {
+                        System.out.print(RED);
+                        System.out.print("\033[2K\r");
+                        System.out.printf(
+                                "%s: %s", convertMillisToDate(correctedTime), alternative.getTranscript());
+                        lastTranscriptWasFinal = false;
+                    }
+                }
+
+                public void onComplete() {
+                    System.out.println("COMPLETEEEEEE");
+                }
+
+                public void onError(Throwable t) {
+                    System.out.println(t.getMessage());
+                }
+            };
+            clientStream = client.streamingRecognizeCallable().splitCall(responseObserver);
+
+            StreamingRecognitionConfig streamingRecognitionConfig = googleSTTSettings();
+            StreamingRecognizeRequest request =
+                    StreamingRecognizeRequest.newBuilder()
+                            .setStreamingConfig(streamingRecognitionConfig)
+                            .build(); // The first request in a streaming call has to be a config
+
+            clientStream.send(request);
+
+            try {
+                long startTime = System.currentTimeMillis();
+
+                while (true) {
+
+                    long estimatedTime = System.currentTimeMillis() - startTime;
+
+                    if (estimatedTime >= STREAMING_LIMIT || (phrasesPreviousCurrentSizes[0] != phrasesPreviousCurrentSizes[1])) {
+
+                        clientStream.closeSend();
+                        referenceToStreamController.cancel(); // remove Observer
+
+                        if (resultEndTimeInMS > 0) {
+                            finalRequestEndTime = isFinalEndTime;
+                        }
+                        resultEndTimeInMS = 0;
+
+                        lastAudioInput = null;
+                        lastAudioInput = audioInput;
+                        audioInput = new ArrayList<>();
+
+                        restartCounter++;
+
+                        if (!lastTranscriptWasFinal) {
+                            System.out.print('\n');
+                        }
+
+                        newStream = phrasesPreviousCurrentSizes[0] == phrasesPreviousCurrentSizes[1];
+
+                        clientStream = client.streamingRecognizeCallable().splitCall(responseObserver);
+                        streamingRecognitionConfig = googleSTTSettings();
+                        request =
+                                StreamingRecognizeRequest.newBuilder()
+                                        .setStreamingConfig(streamingRecognitionConfig)
+                                        .build();
+
+                        System.out.println(YELLOW);
+                        System.out.printf("%d: RESTARTING REQUEST\n", restartCounter * STREAMING_LIMIT);
+
+                        startTime = System.currentTimeMillis();
+
+                    } else {
+
+                        if ((newStream) && (lastAudioInput.size() > 0)) {
+                            // if this is the first audio from a new request
+                            // calculate amount of unfinalized audio from last request
+                            // resend the audio to the speech client before incoming audio
+                            double chunkTime = STREAMING_LIMIT / lastAudioInput.size();
+                            // ms length of each chunk in previous request audio arrayList
+                            if (chunkTime != 0) {
+                                if (bridgingOffset < 0) {
+                                    // bridging Offset accounts for time of resent audio
+                                    // calculated from last request
+                                    bridgingOffset = 0;
+                                }
+                                if (bridgingOffset > finalRequestEndTime) {
+                                    bridgingOffset = finalRequestEndTime;
+                                }
+                                int chunksFromMS =
+                                        (int) Math.floor((finalRequestEndTime - bridgingOffset) / chunkTime);
+                                // chunks from MS is number of chunks to resend
+                                bridgingOffset =
+                                        (int) Math.floor((lastAudioInput.size() - chunksFromMS) * chunkTime);
+                                // set bridging offset for next request
+                                for (int i = chunksFromMS; i < lastAudioInput.size(); i++) {
+                                    request =
+                                            StreamingRecognizeRequest.newBuilder()
+                                                    .setAudioContent(lastAudioInput.get(i))
+                                                    .build();
+                                    clientStream.send(request);
+                                }
+                            }
+                            newStream = false;
+                        }
+
+                        ByteString tempByteString = ByteString.copyFrom(sharedQueue.take());
+
+                        request =
+                                StreamingRecognizeRequest.newBuilder().setAudioContent(tempByteString).build();
+
+                        audioInput.add(tempByteString);
+                    }
+
+                    clientStream.send(request);
+                }
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+    @Override
+    protected Void doInBackground(InfiniteStreamRecognizeArguments... infiniteStreamRecognizeArguments) {
+        try {
+            setup(infiniteStreamRecognizeArguments[0].inputStream);
+            infiniteStreamingRecognize();
+        } catch (Exception e) {
+            System.out.println("Exception caught: " + e);
+        }
+        return null;
+    }
+}
+	\end{lstlisting}
+\end{center}
+\subsection{Εντολή}
 Η εντολή αποτελείται από μία κανονική έκφραση η οποία είναι μια ακολουθία χαρακτήρων που ορίζουν ένα μοτίβο αναζήτησης, από τον κώδικα που θα εκτελεστεί αν το μοτίβο ταιριάξει με την μεταγραφή απο το Speech-to-Text API και μια λίστα λέξεων και φράσεων που παρέχουν συμβουλές στην υπηρεσία για την εργασία αναγνώρισης ομιλίας.
-\section{Εκτελεστής Εντολών}
+\begin{center}
+	Δείγμα κώδικα:
+	\begin{lstlisting}[language=java]
+public class Command {
+    public Pattern pattern;
+    private Matcher matcher;
+    private CommandExecutor commandExecutor;
+    private List<String> phrases;
+
+    public Command(String regex, CommandExecutor commandExecutor, int flags, List<String> phrases){
+        this.commandExecutor = commandExecutor;
+        this.phrases = phrases;
+        try{
+            pattern = Pattern.compile(regex, flags);
+        }
+        catch(PatternSyntaxException pSE){
+            System.out.println("Incorrect Regular Expression: " + pSE.getMessage());
+        }
+    }
+
+    public Boolean match(String text){
+        matcher = pattern.matcher(text);
+        return matcher.matches();
+    }
+
+    public Boolean find(String text){
+        matcher = pattern.matcher(text);
+        return matcher.find();
+    }
+
+    public void execute(List<String> list){
+        commandExecutor.execute(list);
+    }
+
+    public List<String> groups(){
+        List<String> groups = new ArrayList<>();
+        if(matcher != null){
+            int noGroups = matcher.groupCount();
+            for(int i=0; i <= noGroups; i++) {
+                groups.add(matcher.group(i));
+            }
+        }
+        else{
+            System.out.println("Couldn't match!");
+        }
+        return groups;
+    }
+
+    public List<String> getPhrases(){
+        if(phrases == null){
+            phrases = new ArrayList<>();
+        }
+        return phrases;
+    }
+}
+	\end{lstlisting}
+\end{center}
+\subsection{Εκτελεστής Εντολών}
 Ο εκτελεστής εντολών εκτελεί τη συνάρτηση που δηλώνεται όταν το μοτίβο της εντολής ταιριάξει με την μεταγραφή απο την υπηρεσία Speech-to-Text.
-\section{Ταιριαστής Εντολών}
+\begin{center}
+	Δείγμα κώδικα:
+	\begin{lstlisting}[language=java]
+public abstract class CommandExecutor {
+
+     public abstract void execute(List<String> list);
+}
+	\end{lstlisting}
+\end{center}
+\subsection{Ταιριαστής Εντολών}
 Ο ταιριαστής εντολών ταιριάζει την μεταγραφή απο την υπηρεσία Speech-to-Text πάνω στο μοτίβο και καλεί τον εκτελεστή εντολών αν ταιριάξει επιτυχώς.
-%\includegraphics[scale=1]{figures/api_diagram-1.pdf} \\ \vspace{20cm} \\
+\begin{center}
+	Δείγμα κώδικα:
+	\begin{lstlisting}[language=java]
+public class TranscriptMatcher {
+    public List<Command> commands;
+
+    public TranscriptMatcher(List<Command> commands){
+        this.commands = commands;
+    }
+
+    public void match(String transcript){
+        for(Command command : commands){
+            if(command.match(transcript)){
+                command.execute(command.groups());
+                break;
+            }
+        }
+    }
+}
+	\end{lstlisting}
+\end{center}
+\chapter{Μελισσοκομική Εφαρμογή}
+Η εφαρμογή είναι το πρακτικό παράδειγμα χρήσης της βιβλιοθήκης Speech-to-Command.
+\section{Υλοποιήση φωνητικών εντολών}
+Δείγμα κώδικα της υλοποιήσης των φωνητικών εντολών:
+\begin{itemize}
+	\item Μελίσσι
+	\begin{lstlisting}[language=java]
+Command melissiCommand = new CommandBuilder().setCommandExecutor(new CommandExecutor() {
+            @Override
+            public void execute(List<String> list) {
+                Beehive beehive = db.beehiveDao().findBeehiveId(Integer.parseInt(list.get(1)));
+                if(beehive != null) {
+                    Intent intent = new Intent(MainActivity.this, BeehiveChecksActivity.class);
+                    intent.putExtra(BeehiveChecksActivity.EXTRA_BEEHIVE_NUMBER, beehive.number);
+                    intent.putExtra(BeehiveChecksActivity.EXTRA_BEEHIVE_ID, beehive.id);
+                    MainActivity.this.startActivity(intent);
+                }
+                else {
+                    Toast.makeText(MainActivity.this, "Μελίσσι "+list.get(1)+" δεν υπάρχει!", Toast.LENGTH_LONG).show();
+                }
+            }
+        }).setRegex("μελ[ιί]σσι\\s+(\\d+)").setFlags(Pattern.CASE_INSENSITIVE|Pattern.DOTALL)
+                .setPhrases(beehivePhrases).build();
+	\end{lstlisting}
+    \item Πλαίσια
+	\begin{lstlisting}[language=java]
+	Command frameCommand = new CommandBuilder().setCommandExecutor(new CommandExecutor() {
+            @Override
+            public void execute(final List<String> list) {
+                Log.i("Πλαισια:", list.get(1));
+                NewEditBeehiveCheckActivity.this.runOnUiThread(new Runnable() {
+                    public void run() {
+                        editFrames.setText(list.get(1));
+                        Toast.makeText(NewEditBeehiveCheckActivity.this, "Πλαίσιο " + list.get(1) + "!", Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+        }).setRegex("πλα[ιί]σι[οα]\\s+(\\d+)").setFlags(Pattern.CASE_INSENSITIVE | Pattern.DOTALL)
+                .setPhrases(framePhrases).build();
+    \end{lstlisting}
+    \item Πλυθησμός
+	\begin{lstlisting}[language=java]
+	Command populationCommand = new CommandBuilder().setCommandExecutor(new CommandExecutor() {
+            @Override
+            public void execute(final List<String> list) {
+                Log.i("Πληθυσμός:", list.get(1));
+                NewEditBeehiveCheckActivity.this.runOnUiThread(new Runnable() {
+                    public void run() {
+                        editPopulation.setText(list.get(1));
+                        Toast.makeText(NewEditBeehiveCheckActivity.this, "Πληθυσμός " + list.get(1) + "!", Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+        }).setRegex("πληθυσμ[οό]ς\\s+(\\d+)").setFlags(Pattern.CASE_INSENSITIVE | Pattern.DOTALL)
+                .setPhrases(populationPhrases).build();
+	\end{lstlisting}
+	\item Γόνος
+	\begin{lstlisting}[language=java]
+	Command progenyCommand = new CommandBuilder().setCommandExecutor(new CommandExecutor() {
+            @Override
+            public void execute(final List<String> list) {
+                Log.i("ΓΟΝΟΣ:", list.get(1));
+                NewEditBeehiveCheckActivity.this.runOnUiThread(new Runnable() {
+                    public void run() {
+                        editProgeny.setText(list.get(1));
+                        Toast.makeText(NewEditBeehiveCheckActivity.this, "ΓΟΝΟΣ " + list.get(1) + "!", Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+        }).setRegex("γ[όο]νος\\s+(\\d+)").setFlags(Pattern.CASE_INSENSITIVE | Pattern.DOTALL)
+                .setPhrases(progenyPhrases).build();
+	\end{lstlisting}
+	\item Μέλι
+	\begin{lstlisting}[language=java]
+	Command honeyCommand = new CommandBuilder().setCommandExecutor(new CommandExecutor() {
+            @Override
+            public void execute(final List<String> list) {
+                Log.i("Μέλι:", list.get(1));
+                NewEditBeehiveCheckActivity.this.runOnUiThread(new Runnable() {
+                    public void run() {
+                        editHoney.setText(list.get(1));
+                        Toast.makeText(NewEditBeehiveCheckActivity.this, "Μέλι " + list.get(1) + "!", Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+        }).setRegex("μ[έε]λι\\s+(\\d+)").setFlags(Pattern.CASE_INSENSITIVE | Pattern.DOTALL)
+                .setPhrases(honeyPhrases).build();
+	\end{lstlisting}
+	\item Γύρη
+	\begin{lstlisting}[language=java]
+	 Command pollenCommand = new CommandBuilder().setCommandExecutor(new CommandExecutor() {
+            @Override
+            public void execute(final List<String> list) {
+                Log.i("Γύρη:", list.get(1));
+                NewEditBeehiveCheckActivity.this.runOnUiThread(new Runnable() {
+                    public void run() {
+                        editPollen.setText(list.get(1));
+                        Toast.makeText(NewEditBeehiveCheckActivity.this, "Γύρη " + list.get(1) + "!", Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+        }).setRegex("γ[ύυ]ρη\\s+(\\d+)").setFlags(Pattern.CASE_INSENSITIVE | Pattern.DOTALL)
+                .setPhrases(pollenPhrases).build();
+	\end{lstlisting}
+	\item Παρατήρηση
+	\begin{lstlisting}[language=java]
+	 Command noteCommand = new CommandBuilder().setCommandExecutor(new CommandExecutor() {
+            @Override
+            public void execute(final List<String> list) {
+                Log.i("Παρατήρηση:", list.get(1));
+                NewEditBeehiveCheckActivity.this.runOnUiThread(new Runnable() {
+                    public void run() {
+                        if(editNotes.getText().length() > 0){
+                            editNotes.append("," + list.get(1));
+                        }
+                        else{
+                            editNotes.setText(list.get(1));
+                        }
+                        Toast.makeText(NewEditBeehiveCheckActivity.this, "Παρατήρηση " + list.get(1) + "!", Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+        }).setRegex("παρατ[ήη]ρηση\\s+(.*)").setFlags(Pattern.CASE_INSENSITIVE | Pattern.DOTALL)
+                .setPhrases(notesPhrases).build();
+	\end{lstlisting}
+\end{itemize}
+\section{Παράδειγμα χρήσης}
+Τo παρακάτω παράδειγμα χρήσης είναι για την δοκιμή των υπηρεσιών της βιβλιοθήκης μέσω της εφαρμογής. Σε αυτό το παράδειγμα υλοποιείται μια φυσιολογική ροή με σωστή χρήση των φωνητικών εντολών.
+Κεντρικό γραφικό
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{images/app_screenshot_1.jpg}
+    \caption{Κεντρικό γραφικό της εφαρμογής}
+    \label{fig:myfigure}
+\end{figure}
+Έναρξη νέου ελέγχου μελισσιού μέσω φωνητικών εντολών:
+\newline
+Φωνητική εντολή: Μελίσσι 1
+\newline
+Γραφικό:
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{images/app_screenshot_2.jpg}
+    \caption{Νέος έλεγχος μελισσιού}
+    \label{fig:myfigure}
+\end{figure}
+\newpage
+Φωνητικές εντολές για το γέμιστα των πεδιών του γραφικού
+\begin{enumerate}
+	\item Φωνητική εντολή: Πλαίσια 10
+	\begin{figure}[H]
+    	\centering
+    	\includegraphics[scale=0.3]{images/app_screenshot_3.jpg}
+    	\caption{Προσθήκη αριθμού πλαισίων}
+	\end{figure}
+	\newpage
+	\item Φωνητική εντολή: Πλυθησμός 8
+	\begin{figure}[H]
+    	\centering
+    	\includegraphics[scale=0.3]{images/app_screenshot_4.jpg}
+    	\caption{Προσθήκη αριθμού πλαισίων πλυθησμού}
+	\end{figure}
+	\newpage
+	\item Φωνητική εντολή: Γόνος 3
+	\begin{figure}[H]
+    	\centering
+    	\includegraphics[scale=0.3]{images/app_screenshot_5.jpg}
+    	\caption{Προσθήκη αριθμού πλαισίων γόνου}
+	\end{figure}
+	\newpage
+	\item Φωνητική εντολή: Μέλι 2
+	\begin{figure}[H]
+    	\centering
+    	\includegraphics[scale=0.3]{images/app_screenshot_6.jpg}
+    	\caption{Προσθήκη αριθμού πλαισίων μελιού}
+	\end{figure}
+	\newpage
+	\item Φωνητική εντολή: Γύρη 3
+	\begin{figure}[H]
+    	\centering
+    	\includegraphics[scale=0.3]{images/app_screenshot_7.jpg}
+    	\caption{Προσθήκη αριθμού πλαισίων γύρης}
+	\end{figure}
+	\newpage
+	\item Φωνητική εντολή: Παρατήρηση θέλει νέο όροφο
+	\begin{figure}[H]
+    	\centering
+    	\includegraphics[scale=0.3]{images/app_screenshot_8.jpg}
+    	\caption{Προσθήκη παρατήρησης}
+	\end{figure}
+\end{enumerate}
+\chapter{Συμπεράσματα}
+\section{Στόχοι}
+Κατά την διάρκεια εκπόνησης της πτυχιακής εργασίας, επιτεύχθηκε ο κύριος στόχος που αρχικά είχαμε θέσει, αυτός της δημιουργίας μιας βιβλιοθήκης και μιας εφαρμογή που την χρησιμοποιεί. Η δημιουργία της βιβλιοθήκης και της εφαρμογής δεν ήταν οι μοναδικοί στόχοι που επιτεύχθηκαν. Σε προσωπικό επίπεδο τα κέρδη ήταν πολλαπλά. Η μελέτη και η έρευνα της βιβλιογραφίας σε τέτοιο βαθμό ήταν κάτι πρωτόγνωρο αλλά και παράλληλα εποικοδομητική καθώς βάσει αυτής γράφτηκε το παρόν βιβλίο με τις όποιες τεκμηριώσεις. Επίσης η αναπτύξη αυτού του εργαλειού μπορεί να εφαρμοστεί σε πραγματικά προβλήματα όπως αυτά του μελισσοκόμου που σύμβαλε στην ανάπτυξη της εφαρμαγής για την δοκιμή της βιβλιοθήκης.
+\section{Δυσκολίες}
+Κατά την διάρκεια ανάπτυξης της εργασίας, η μοναδικη δυσκολία που παρουσιάστηκε ήταν τεχνικής φύσεως. Συγκεκριμένα, στην ανάπτυξη της βιβλιοθήκης έτσι ώστε να είναι φιλική προς τον προγραμματιστή όταν την χρησιμοποιήσει.
+\section{Προτάσεις εξέλιξεις}
+Όπως είναι φυσιολογικό, η βιβλιοθήκη επιδέχεται βελτίωσης αλλά και νέων προσθηκών που θα το κάνουν πιο δυναμικό αλλά και πιο φιλικό προς τον χρήστη. Ο πηγαίος κώδικας όπως και οποιαδήποτε πρόσθετη πληροφορία υπάρχει στην διεύθυνση \path{https://github.com/EvanPetr/Thesis}
+Αναφορικά μερικές προτάσεις εξέλιξης είναι οι εξής:
+\begin{itemize}
+	\item Δημιουργία κλάσεων για τα exceptions της βιβλιοθήκης για την καλύτερη καθοδήγηση του χρήστη στην επίλυση των προβλημάτων.
+	\item Δυνατότητα χρησιμοποιήσεις διαφορετικού Speech-to-text API από αυτό της Google.
+	\item Υλοποιήση Testing στην βιβλιοθήκη για πρόληψη σφάλματων.
+	\item Offline αναγνώριση ομιλίας.
+\end{itemize}
 
 
-%\section{Η τυπογραφία σήμερα}\label{sec:η-τυπογραφία-σήμερα}
-%%Αυτή είναι η αναφορά σε ένα άρθρο περιοδικού:\citep{Schmidt98}.Αυτή
-%%είναι η αναφορά σε ένα βιβλίο:\citep{goosens93}. Αυτή είναι η αναφορά
-%%σε ένα ελληνικό βιβλίο:\citep{Chatzigeorgiou05}. Βιβλίο στα ελληνικά
-%%με ξένο συγγραφέα:\citep{Sommerville09}. Άρθρο σε
-%%συνέδριο~\citep{4343930}.
-%
-%Τέλος αναφορά σε ιστοσελίδα:~\citep{Wikipedia_BibTeX}.
-
-%Εδώ αναφερόμαστε στo σχήμα~\ref{fig:image1}:
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=35mm]{lion.png}
-%  \caption{Παράδειγμα εικόνας}
-%  \label{fig:image1}
-%\end{figure}
-%dsasdadadasdasdas
-%ad
-%asd
-%asd
-%
-%και εδώ στον πίνακα~\ref{tab:table1}:
-%\begin{table}[h]
-%  \centering
-%  \caption{Παράδειγμα πίνακα}
-% \begin{tabularx}{\linewidth}[h]{|XXX|}%
-%\hline
-%\hline
-%Κίνητρα & Παραδείγματα ευρημάτων & Αριθμός μελετών\\
-%\hline
-%Ταύτιση με το έργο & Ξεκάθαροι στόχοι &20\\
-%Καλό management & Ομαδικότητα &16\\
-%Συμμετοχή υπαλλήλων & Συμμετοχή στις αποφάσεις&16\\
-%Προοπτικές εξέλιξης & Προοπτικές προαγωγής&15\\
-%Ποικιλία στην εργασία & Καλή χρήση ικανοτήτων& 14\\
-%Αίσθηση του να ανήκεις κάπου& Υποστηρικτικές σχέσεις&14\\
-%Αμοιβές και κίνητρα & Αυξημένος μισθός& 14\\
-%\hline
-%\hline
-%\end{tabularx}
-%  \label{tab:table1}
-%\end{table}
-%\appendix
-%\chapter{Συνοπτικός οδηγός χρήσης \LaTeX}
-%Εδώ βάζετε ότι θα έμπαινε σε παράρτημα.
-%\texttt{Δοκιμή σε mono-space}
-%Προαιρετικά
 \begin{Glossary}
-https://nordicapis.com/5-best-speech-to-text-apis/
-\newline
-https://cloud.google.com/speech-to-text\#all-features
-\newline
-https://www.ibm.com/cloud/watson-speech-to-text
-\newline
-https://azure.microsoft.com/en-us/services/cognitive-services/speech-to-text/
 \begin{description}
   \item[AI]Artificial Intelligence
   \item[API]Application Programming Interface
@@ -847,7 +1400,7 @@ https://azure.microsoft.com/en-us/services/cognitive-services/speech-to-text/
 \end{description}
 \end{Glossary}
 \newpage
+\nocite{*}
 \printbibliography
-\newpage
 \lastpageinfo
 \end{document}

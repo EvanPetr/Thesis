@@ -10,7 +10,9 @@
     <string name="new_beehive_check">Νέος Έλεγχος</string>
     <string name="hint_word">Αριθμός Μελισσιού</string>
     <string name="button_save">Save</string>
-    <string name="empty_not_saved">Word not saved because it is empty.</string>
+    <string name="empty_not_saved">Το μελίσσι δεν αποθηκεύτηκε.</string>
+    <string name="beehive_check_empty">Ο έλεγχος δεν αποθηκεύτηκε.</string>
     <string name="enter_date">Ηλικία βασίλισσας</string>
     <string name="enter_check_date">Ημερομηνία ελέγχου</string>
+    <string name="beehive_check_menu_delete">Διαγραφή</string>
 </resources>

@@ -13,14 +13,12 @@ public class MicrophoneRecorder extends Thread {
     private static final int RECORDER_SAMPLE_RATE = 16000;
     private static final int RECORDER_CHANNELS = AudioFormat.CHANNEL_IN_MONO;
     private static final int RECORDER_AUDIO_ENCODING = AudioFormat.ENCODING_PCM_16BIT;
-//    private static int BYTES_PER_BUFFER = 6400; // ~400ms
-    private static int BYTES_PER_BUFFER = 1600; // ~100ms
+    private static final int BYTES_PER_BUFFER = 1600; // ~100ms
     private static AudioRecord audioRecord;
     public static volatile List<BlockingQueue<byte[]>> blockingQueues;
 
     @Override
     public void run() {
-        System.out.println("Start speaking...NOWWWW");
         audioRecord.startRecording();
         byte[] data = new byte[BYTES_PER_BUFFER];
         while (true) {
@@ -45,5 +43,4 @@ public class MicrophoneRecorder extends Thread {
         blockingQueues = new ArrayList<>();
         new MicrophoneRecorder().start();
     }
-
 }

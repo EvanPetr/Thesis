@@ -36,18 +36,6 @@ public abstract class BeehiveRoomDatabase extends RoomDatabase {
                     // If you want to start with more words, just add them.
                     BeehiveDao dao = INSTANCE.beehiveDao();
                     BeehiveCheckDao cdao = INSTANCE.beehiveCheckDao();
-//                    BeehiveCheck beehiveCheck = new BeehiveCheck("20/08/2121", 9, 5, 4, 3, 2, 1);
-//                    cdao.insert(beehiveCheck);
-//                    beehiveCheck = new BeehiveCheck("20/08/2121", 9, 5, 4, 3, 2, 2);
-//                    cdao.insert(beehiveCheck);
-//                    beehiveCheck = new BeehiveCheck("20/08/2121", 9, 5, 4, 3, 2, 3);
-//                    cdao.insert(beehiveCheck);
-//                dao.deleteAll();
-
-//                Word word = new Word("Hello");
-//                dao.insert(word);
-//                word = new Word("World");
-//                dao.insert(word);
                 }
             });
         }

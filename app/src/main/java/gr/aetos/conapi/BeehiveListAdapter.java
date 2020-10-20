@@ -13,22 +13,35 @@ import java.util.List;
 
 
 public class BeehiveListAdapter extends RecyclerView.Adapter<BeehiveListAdapter.BeehiveViewHolder> {
-    private onItemClickListener listener;
+    private onItemClickListener onItemClickListener;
+    private onItemLongClickListener onItemLongClickListener;
 
     class BeehiveViewHolder extends RecyclerView.ViewHolder {
-        private final TextView beehiveItemView;
+        private final TextView beehiveItemView, beehiveSubTextView;
 
         private BeehiveViewHolder(View itemView) {
             super(itemView);
             beehiveItemView = itemView.findViewById(R.id.textView);
+            beehiveSubTextView = itemView.findViewById(R.id.beehive_subtext);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     int position = getAdapterPosition();
-                    if(listener != null && position != RecyclerView.NO_POSITION) {
-                        listener.onItemCLick(beehives.get(position));
+                    if(onItemClickListener != null && position != RecyclerView.NO_POSITION) {
+                        onItemClickListener.onItemCLick(beehives.get(position));
                     }
+                }
+            });
+
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    int position = getAdapterPosition();
+                    if(onItemLongClickListener != null && position != RecyclerView.NO_POSITION) {
+                        onItemLongClickListener.onItemLongCLick(beehives.get(position));
+                    }
+                    return true;
                 }
             });
         }
@@ -50,7 +63,8 @@ public class BeehiveListAdapter extends RecyclerView.Adapter<BeehiveListAdapter.
     public void onBindViewHolder(@NonNull BeehiveViewHolder holder, int position) {
         if (beehives != null) {
             Beehive current = beehives.get(position);
-            holder.beehiveItemView.setText("Μελίσσι " + current.number+ "|" + current.beeQueenAge);
+            holder.beehiveItemView.setText("Μελίσσι " + current.number);
+            holder.beehiveSubTextView.setText(current.beeQueenAge);
         } else {
             // Covers the case of data not being ready yet.
             holder.beehiveItemView.setText("No Beehive");
@@ -76,6 +90,14 @@ public class BeehiveListAdapter extends RecyclerView.Adapter<BeehiveListAdapter.
     }
 
     public void setOnItemClickListener(onItemClickListener listener){
-        this.listener = listener;
+        this.onItemClickListener = listener;
+    }
+
+    public interface onItemLongClickListener{
+        void onItemLongCLick(Beehive beehive);
+    }
+
+    public void setOnItemLongClickListener(onItemLongClickListener listener){
+        this.onItemLongClickListener = listener;
     }
 }

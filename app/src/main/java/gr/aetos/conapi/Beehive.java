@@ -15,7 +15,8 @@ public class Beehive {
     @ColumnInfo
     public String beeQueenAge;
 
-    public Beehive(int number, String beeQueenAge){
+    public Beehive(int id, int number, String beeQueenAge){
+        this.id = id;
         this.number = number;
         this.beeQueenAge = beeQueenAge;
     }

@@ -36,4 +36,22 @@ public class BeehiveRepository {
             }
         });
     }
+
+    void update(final Beehive beehive) {
+        BeehiveRoomDatabase.databaseWriteExecutor.execute(new Runnable() {
+            @Override
+            public void run() {
+                beehiveDao.update(beehive);
+            }
+        });
+    }
+
+    void delete(final Beehive beehive) {
+        BeehiveRoomDatabase.databaseWriteExecutor.execute(new Runnable() {
+            @Override
+            public void run() {
+                beehiveDao.delete(beehive);
+            }
+        });
+    }
 }

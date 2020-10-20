@@ -21,10 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NewBeehiveActivity"/>
+        <activity android:name=".NewEditBeehiveActivity"/>
         <activity android:name=".BeehiveChecksActivity"
             android:parentActivityName=".MainActivity"/>
-        <activity android:name=".NewBeehiveCheckActivity" android:parentActivityName=".BeehiveChecksActivity"/>
+        <activity android:name=".NewEditBeehiveCheckActivity" android:parentActivityName=".BeehiveChecksActivity"/>
     </application>
 
 </manifest>

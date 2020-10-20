@@ -2,8 +2,10 @@ package gr.aetos.conapi;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import java.util.List;
 
@@ -20,4 +22,10 @@ public interface BeehiveDao {
 
     @Insert
     void insert(Beehive beehive);
+
+    @Update
+    void update(Beehive beehive);
+
+    @Delete
+    void delete(Beehive beehive);
 }

@@ -1,7 +1,6 @@
 package gr.aetos.conapi;
 
 import android.app.Application;
-import android.text.BoringLayout;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
@@ -24,4 +23,8 @@ public class BeehiveCheckViewModel extends AndroidViewModel {
     }
 
     public void insert(BeehiveCheck beehiveCheck) { beehiveCheckRepository.insert(beehiveCheck); }
+
+    public void update(BeehiveCheck beehiveCheck) { beehiveCheckRepository.update(beehiveCheck); }
+
+    public void delete(BeehiveCheck beehiveCheck) { beehiveCheckRepository.delete(beehiveCheck); }
 }

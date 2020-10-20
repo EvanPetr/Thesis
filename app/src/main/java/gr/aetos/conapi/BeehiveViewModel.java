@@ -21,4 +21,8 @@ public class BeehiveViewModel extends AndroidViewModel {
     LiveData<List<Beehive>> getAllBeehives() { return allBeehives; }
 
     public void insert(Beehive beehive) { beehiveRepository.insert(beehive); }
+
+    public void update(Beehive beehive) { beehiveRepository.update(beehive); }
+
+    public void delete(Beehive beehive) { beehiveRepository.delete(beehive); }
 }

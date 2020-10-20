@@ -13,7 +13,8 @@ import java.util.List;
 
 
 public class BeehiveChecksListAdapter extends RecyclerView.Adapter<BeehiveChecksListAdapter.BeehiveChecksViewHolder> {
-    private onItemClickListener listener;
+    private onItemClickListener onItemClickListener;
+    private onItemLongClickListener onItemLongClickListener;
 
     class BeehiveChecksViewHolder extends RecyclerView.ViewHolder {
         private final TextView beehiveItemView;
@@ -26,9 +27,20 @@ public class BeehiveChecksListAdapter extends RecyclerView.Adapter<BeehiveChecks
                 @Override
                 public void onClick(View v) {
                     int position = getAdapterPosition();
-                    if(listener != null && position != RecyclerView.NO_POSITION) {
-                        listener.onItemCLick(beehiveChecks.get(position));
+                    if(onItemClickListener != null && position != RecyclerView.NO_POSITION) {
+                        onItemClickListener.onItemCLick(beehiveChecks.get(position));
                     }
+                }
+            });
+
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    int position = getAdapterPosition();
+                    if(onItemLongClickListener != null && position != RecyclerView.NO_POSITION) {
+                        onItemLongClickListener.onItemLongCLick(beehiveChecks.get(position));
+                    }
+                    return true;
                 }
             });
         }
@@ -50,7 +62,7 @@ public class BeehiveChecksListAdapter extends RecyclerView.Adapter<BeehiveChecks
     public void onBindViewHolder(@NonNull BeehiveChecksViewHolder holder, int position) {
         if (beehiveChecks != null) {
             BeehiveCheck current = beehiveChecks.get(position);
-            holder.beehiveItemView.setText("Έλεγχος " + position);
+            holder.beehiveItemView.setText("Έλεγχος " + current.date);
         } else {
             // Covers the case of data not being ready yet.
             holder.beehiveItemView.setText("No Beehive");
@@ -76,6 +88,14 @@ public class BeehiveChecksListAdapter extends RecyclerView.Adapter<BeehiveChecks
     }
 
     public void setOnItemClickListener(onItemClickListener listener){
-        this.listener = listener;
+        this.onItemClickListener = listener;
+    }
+
+    public interface onItemLongClickListener{
+        void onItemLongCLick(BeehiveCheck beehiveCheck);
+    }
+
+    public void setOnItemLongClickListener(onItemLongClickListener listener){
+        this.onItemLongClickListener = listener;
     }
 }

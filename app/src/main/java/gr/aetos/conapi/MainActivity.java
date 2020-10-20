@@ -1,10 +1,11 @@
 package gr.aetos.conapi;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +16,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -35,11 +35,9 @@ import gr.aetos.speechtocommand.TranscriptMatcher;
 
 
 public class MainActivity extends AppCompatActivity {
-    public static final int NEW_BEEHIVE_ACTIVITY_REQUEST_CODE = 1;
     private BeehiveViewModel beehiveViewModel;
-    TextView tv1;
-    List<String> phrases = Arrays.asList("Μελίσσι", "Μελισσι", "μελίσσι", "μελισσι");
-    BeehiveRoomDatabase db;
+    private BeehiveRoomDatabase db;
+    private final List<String> beehivePhrases = Arrays.asList("Μελίσσι 1", "Μελίσσι 2", "Μελίσσι 3", "Μελίσσι 4", "Μελίσσι 5", "Μελίσσι 6", "Μελίσσι 7", "Μελίσσι 8", "Μελίσσι 9", "Μελίσσι 10", "Μελισσι 1", "Μελισσι 2", "Μελισσι 3", "Μελισσι 4", "Μελισσι 5", "Μελισσι 6", "Μελισσι 7", "Μελισσι 8", "Μελισσι 9", "Μελισσι 10", "μελίσσι 1", "μελίσσι 2", "μελίσσι 3", "μελίσσι 4", "μελίσσι 5", "μελίσσι 6", "μελίσσι 7", "μελίσσι 8", "μελίσσι 9", "μελίσσι 10", "μελισσι 1", "μελισσι 2", "μελισσι 3", "μελισσι 4", "μελισσι 5", "μελισσι 6", "μελισσι 7", "μελισσι 8", "μελισσι 9", "μελισσι 10");
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,27 +46,30 @@ public class MainActivity extends AppCompatActivity {
 
         permissionRequest();
         MicrophoneRecorder.main();
-        tv1 = findViewById(R.id.transcriptTextView);
         db = BeehiveRoomDatabase.getDatabase(MainActivity.this);
         List<Command> commands = new ArrayList<Command>(){};
         Command melissiCommand = new CommandBuilder().setCommandExecutor(new CommandExecutor() {
             @Override
-            public void execute(List<String> list) {
-                Log.i("Mellissi:", list.get(1));
+            public void execute(final List<String> list) {
                 Beehive beehive = db.beehiveDao().findBeehiveId(Integer.parseInt(list.get(1)));
                 if(beehive != null) {
                     Intent intent = new Intent(MainActivity.this, BeehiveChecksActivity.class);
                     intent.putExtra(BeehiveChecksActivity.EXTRA_BEEHIVE_NUMBER, beehive.number);
                     intent.putExtra(BeehiveChecksActivity.EXTRA_BEEHIVE_ID, beehive.id);
+                    intent.putExtra(BeehiveChecksActivity.EXTRA_COMMAND_REQUEST, 0);
                     MainActivity.this.startActivity(intent);
                 }
                 else {
-//                    Log.w("Beehive does not exist!", "Μελίσσι "+list.get(1)+" δεν υπάρχει!");
-                    Toast.makeText(MainActivity.this, "Μελίσσι "+list.get(1)+" δεν υπάρχει!", Toast.LENGTH_LONG).show();
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(MainActivity.this, "Μελίσσι "+list.get(1)+" δεν υπάρχει!", Toast.LENGTH_LONG).show();
+                        }
+                    });
                 }
             }
         }).setRegex("μελ[ιί]σσι\\s+(\\d+)").setFlags(Pattern.CASE_INSENSITIVE|Pattern.DOTALL)
-                .setPhrases(new ArrayList<>(Arrays.asList("Μελίσσι", "Μελισσι", "μελίσσι", "μελισσι"))).build();
+                .setPhrases(beehivePhrases).build();
         commands.add(melissiCommand);
         TranscriptMatcher transcriptMatcher = new TranscriptMatcher(commands);
         InfiniteStreamRecognize.addTranscriptMatcher(transcriptMatcher);
@@ -94,8 +95,8 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, NewBeehiveActivity.class);
-                startActivityForResult(intent, NEW_BEEHIVE_ACTIVITY_REQUEST_CODE);
+                Intent intent = new Intent(MainActivity.this, NewEditBeehiveActivity.class);
+                startActivityForResult(intent, NewEditBeehiveActivity.NEW_BEEHIVE_ACTIVITY_REQUEST_CODE);
             }
         });
         adapter.setOnItemClickListener(new BeehiveListAdapter.onItemClickListener() {
@@ -107,27 +108,43 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.i("RESUME", "onResume: ");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.i("STOP", "onStop: ");
+        adapter.setOnItemLongClickListener(new BeehiveListAdapter.onItemLongClickListener() {
+            @Override
+            public void onItemLongCLick(final Beehive beehive) {
+                final CharSequence[] items = {"Διαγραφή", "Αλλαγή"};
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setItems(items, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int item) {
+                        if(item == 0){
+                            beehiveViewModel.delete(beehive);
+                        }
+                        else if(item == 1){
+                            Intent intent = new Intent(MainActivity.this, NewEditBeehiveActivity.class);
+                            intent.putExtra(NewEditBeehiveActivity.EXTRA_BEEHIVE_ID, beehive.id);
+                            intent.putExtra(NewEditBeehiveActivity.EXTRA_BEEHIVE_NUMBER, beehive.number);
+                            intent.putExtra(NewEditBeehiveActivity.EXTRA_BEEHIVE_QUEEN_DATE, beehive.beeQueenAge);
+                            startActivityForResult(intent, NewEditBeehiveActivity.EDIT_BEEHIVE_ACTIVITY_REQUEST_CODE);
+                        }
+                    }
+                });
+                builder.show();
+            }
+        });
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == NEW_BEEHIVE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            Beehive beehive = new Beehive(data.getIntExtra(NewBeehiveActivity.EXTRA_REPLY, 0), data.getStringExtra(NewBeehiveActivity.DATE_REPLY));
+        if (requestCode == NewEditBeehiveActivity.NEW_BEEHIVE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
+            Beehive beehive = new Beehive(data.getIntExtra(NewEditBeehiveActivity.EXTRA_BEEHIVE_ID, 0), data.getIntExtra(NewEditBeehiveActivity.EXTRA_BEEHIVE_NUMBER, 0), data.getStringExtra(NewEditBeehiveActivity.EXTRA_BEEHIVE_QUEEN_DATE));
             beehiveViewModel.insert(beehive);
-        } else {
+        }
+        else if (requestCode == NewEditBeehiveActivity.EDIT_BEEHIVE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
+            Beehive beehive = new Beehive(data.getIntExtra(NewEditBeehiveActivity.EXTRA_BEEHIVE_ID, 0), data.getIntExtra(NewEditBeehiveActivity.EXTRA_BEEHIVE_NUMBER, 0), data.getStringExtra(NewEditBeehiveActivity.EXTRA_BEEHIVE_QUEEN_DATE));
+            beehiveViewModel.update(beehive);
+        }
+        else {
             Toast.makeText(
                     getApplicationContext(),
                     R.string.empty_not_saved,
