@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.6.28)  20 OCT 2020 10:34
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.6.28)  2 NOV 2020 20:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -728,8 +728,8 @@ tex-text;"
 
 
 ----------------------------------------------------------------------
-- Τμήμα Μηχανικών Πληροφορικής ΤΕ 
-- ΤΕΙ Κεντρικής Μακεδονίας, version 0.4, 05/11/2013 
+- Τμήμα Μηχανικών Πληροφορικής, Υπολογιστών και Τηλεπικοινωνιών 
+- Διεθνές Πανεπιστήμιο της Ελλάδος, version 0.5, 22/09/2020 
 - Nicholaos Petalidis, nikos <at> petalidis.gr 
 -----------------------------------------------------------------------
 ) (a:/Program Files/texlive/2020/texmf-dist/tex/latex/tools/tabularx.sty
@@ -1161,42 +1161,42 @@ Overfull \hbox (1.40657pt too wide) in alignment at lines 140--140
 [14
 
 ]
-Underfull \hbox (badness 6625) in paragraph at lines 200--200
+Underfull \hbox (badness 6625) in paragraph at lines 198--198
 \TU/TimesNewRoman(1)/m/n/12 λέγεται ο αριθμός των
  []
 
 
-Underfull \hbox (badness 6625) in paragraph at lines 200--200
+Underfull \hbox (badness 6625) in paragraph at lines 198--198
 \TU/TimesNewRoman(1)/m/n/12 λέγεται ο αριθμός των
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--200
+Underfull \hbox (badness 10000) in paragraph at lines 198--198
 \TU/TimesNewRoman(1)/m/n/12 πλαίσιων με πληθυσμό
  []
 
 
-Underfull \hbox (badness 6625) in paragraph at lines 200--200
+Underfull \hbox (badness 6625) in paragraph at lines 198--198
 \TU/TimesNewRoman(1)/m/n/12 λέγεται ο αριθμός των
  []
 
 
-Underfull \hbox (badness 6625) in paragraph at lines 200--200
+Underfull \hbox (badness 6625) in paragraph at lines 198--198
 \TU/TimesNewRoman(1)/m/n/12 λέγεται ο αριθμός των
  []
 
 
-Underfull \hbox (badness 6625) in paragraph at lines 200--200
+Underfull \hbox (badness 6625) in paragraph at lines 198--198
 \TU/TimesNewRoman(1)/m/n/12 λέγεται ο αριθμός των
  []
 
 
-Underfull \hbox (badness 1024) in paragraph at lines 200--200
+Underfull \hbox (badness 1024) in paragraph at lines 198--198
 []|\TU/TimesNewRoman(1)/m/n/12 Στο πεδίο <κείμενο> θα
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--200
+Underfull \hbox (badness 10000) in paragraph at lines 198--198
 []|\TU/TimesNewRoman(1)/m/n/12 Παρατήρηση Θέλει
  []
 
@@ -1214,7 +1214,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 ] [23]
 Κεφάλαιο 6.
 
-Overfull \hbox (11.2988pt too wide) in paragraph at lines 355--360
+Overfull \hbox (11.2988pt too wide) in paragraph at lines 349--354
 []\TU/TimesNewRoman(1)/b/n/12 Asynchronous Recognition \TU/TimesNewRoman(1)/m/n
 /12 (REST και gRPC) στέλνει δεδομένα ήχου στο Speech-
  []
@@ -1223,66 +1223,66 @@ Overfull \hbox (11.2988pt too wide) in paragraph at lines 355--360
 
 ]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 379.
+(Font)              <9> on input line 373.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 379.
+(Font)              <5> on input line 373.
  [25] [26]
-Overfull \hbox (39.25291pt too wide) in paragraph at lines 403--404
+Overfull \hbox (39.25291pt too wide) in paragraph at lines 397--398
 \TU/TimesNewRoman(1)/m/n/12 Ο ήχος παρέχεται στο Speech-to-Text μέσω της παραμέ
 τρου ήχου του τύπου RecognitionAudio.
  []
 
 [27] [28] [29]
-Underfull \hbox (badness 2600) in paragraph at lines 519--519
+Underfull \hbox (badness 2600) in paragraph at lines 513--513
 \TU/TimesNewRoman(1)/m/n/12 τελέσματα, παρέχετε ήχο εγγεγραμμένο
  []
 
 
-Overfull \hbox (2.91286pt too wide) in paragraph at lines 519--519
+Overfull \hbox (2.91286pt too wide) in paragraph at lines 513--513
 []|\TU/TimesNewRoman(1)/m/n/12 Τηλεφωνική
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 519--519
+Underfull \hbox (badness 10000) in paragraph at lines 513--513
 []|\TU/TimesNewRoman(1)/m/n/12 ASR:
  []
 
 
-Underfull \hbox (badness 1082) in paragraph at lines 519--519
+Underfull \hbox (badness 1082) in paragraph at lines 513--513
 \TU/TimesNewRoman(1)/m/n/12 μεταγράψετε μικρότερα κλιπ ήχου. Με-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 519--519
+Underfull \hbox (badness 10000) in paragraph at lines 513--513
 []|\TU/TimesNewRoman(1)/m/n/12 ASR:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 519--519
+Underfull \hbox (badness 10000) in paragraph at lines 513--513
 \TU/TimesNewRoman(1)/m/n/12 Προκαθο-
  []
 
 [30] [31]
-Overfull \hbox (9.67188pt too wide) in paragraph at lines 539--540
+Overfull \hbox (9.67188pt too wide) in paragraph at lines 533--534
 []\TU/TimesNewRoman(1)/m/n/12 Μπορεί να διαβαστεί από λογαριασμό χρήστη, εάν χρ
 ησιμοποιείτε 3-legged OAuth
  []
 
 [32]
-Overfull \hbox (25.53125pt too wide) in paragraph at lines 560--561
+Overfull \hbox (25.53125pt too wide) in paragraph at lines 554--555
 []\TU/TimesNewRoman(1)/m/n/12 Τo \TU/TimesNewRoman(1)/b/n/12 results \TU/TimesN
 ewRoman(1)/m/n/12 περιέχουν τη λίστα αποτελεσμάτων (του τύπου \TU/TimesNewRoman
 (1)/b/n/12 SpeechRecognitionResult\TU/TimesNewRoman(1)/m/n/12 )
  []
 
 [33] [34]
-Overfull \hbox (1.0202pt too wide) in paragraph at lines 583--584
+Overfull \hbox (1.0202pt too wide) in paragraph at lines 577--578
 []\TU/TimesNewRoman(1)/m/n/12 Ένα ασύγχρονο Speech-to-Text API αίτημα για τη μέ
 θοδο LongRunningRecognize
  []
 
 [35] [36]
-Overfull \hbox (3.23828pt too wide) in paragraph at lines 631--632
+Overfull \hbox (3.23828pt too wide) in paragraph at lines 625--626
 \TU/TimesNewRoman(1)/m/n/12 το αίτημα θα λήξει αυτόματα μετά την ανίχνευση ομιλ
 ίας. Εάν οριστεί, το Speech-
  []
@@ -1290,7 +1290,7 @@ Overfull \hbox (3.23828pt too wide) in paragraph at lines 631--632
 [37] [38]
 Κεφάλαιο 7.
 
-Overfull \hbox (1.7458pt too wide) in paragraph at lines 661--662
+Overfull \hbox (1.7458pt too wide) in paragraph at lines 655--656
 []\TU/TimesNewRoman(1)/m/n/12 Στην γλώσσα προγραμματισμού Java η εξάρτηση της β
 ιβλιοθήκης μέσω του Gradle
  []
@@ -1303,7 +1303,7 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 File: uml/library_service_sequence_diagram.pdf Graphic file (type pdf)
 <use uml/library_service_sequence_diagram.pdf>
 
-Overfull \hbox (403.30759pt too wide) in paragraph at lines 745--746
+Overfull \hbox (403.30759pt too wide) in paragraph at lines 739--740
 [][] 
  []
 
@@ -1312,7 +1312,7 @@ Overfull \hbox (403.30759pt too wide) in paragraph at lines 745--746
 File: uml/library_uml_class_diagram.pdf Graphic file (type pdf)
 <use uml/library_uml_class_diagram.pdf>
 
-Overfull \hbox (30.66634pt too wide) in paragraph at lines 750--751
+Overfull \hbox (30.66634pt too wide) in paragraph at lines 744--745
 [][] 
  []
 
@@ -1326,20 +1326,19 @@ Overfull \vbox (180.79095pt too high) has occurred while \output is active []
 File: uml/library_uml_use_case_diagram.pdf Graphic file (type pdf)
 <use uml/library_uml_use_case_diagram.pdf>
 
-Overfull \hbox (5.82356pt too wide) in paragraph at lines 753--754
+Overfull \hbox (5.82356pt too wide) in paragraph at lines 746--747
+[][] 
+ []
+
+File: uml/library_uml_component_diagram.pdf Graphic file (type pdf)
+<use uml/library_uml_component_diagram.pdf>
+
+Overfull \hbox (403.30759pt too wide) in paragraph at lines 748--749
 [][] 
  []
 
 [45]
-File: uml/library_uml_component_diagram.pdf Graphic file (type pdf)
-<use uml/library_uml_component_diagram.pdf>
-
-Overfull \hbox (403.30759pt too wide) in paragraph at lines 756--757
-[][] 
- []
-
-
-Overfull \hbox (7.82098pt too wide) in paragraph at lines 758--759
+Overfull \hbox (7.82098pt too wide) in paragraph at lines 750--751
 []\TU/TimesNewRoman(1)/m/n/12 Η ανάπτυξη της βιβλιοθήκης έγινε στην γλώσσα προγ
 ραμματισμού Java για Android
  []
@@ -1379,7 +1378,7 @@ File: images/app_screenshot_8.jpg Graphic file (type bmp)
 ] [71] [72
 
 ]
-Overfull \hbox (90.7181pt too wide) in paragraph at lines 1405--1405
+Overfull \hbox (90.7181pt too wide) in paragraph at lines 1396--1396
 [][]\TU/TimesNewRoman(1)/m/n/12 Github (2020). \TU/TimesNewRoman(1)/m/it/12 Inf
 inite Stream Recognize\TU/TimesNewRoman(1)/m/n/12 . \TU/TimesNewRoman(1)/m/sc/1
 2 url\TU/TimesNewRoman(1)/m/n/12 : []$[][][][][] [] [] [] [][][][][][] [] [][][
@@ -1387,7 +1386,7 @@ inite Stream Recognize\TU/TimesNewRoman(1)/m/n/12 . \TU/TimesNewRoman(1)/m/sc/1
  []
 
 
-Overfull \hbox (7.14583pt too wide) in paragraph at lines 1405--1405
+Overfull \hbox (7.14583pt too wide) in paragraph at lines 1396--1396
 [][]\TU/TimesNewRoman(1)/m/n/12 Google (2020a). \TU/TimesNewRoman(1)/m/it/12 Go
 ogle cloud console\TU/TimesNewRoman(1)/m/n/12 . \TU/TimesNewRoman(1)/m/sc/12 ur
 l\TU/TimesNewRoman(1)/m/n/12 : []$[][][][][] [] [] [] [][][][][][][] [] [][][][
@@ -1395,7 +1394,7 @@ l\TU/TimesNewRoman(1)/m/n/12 : []$[][][][][] [] [] [] [][][][][][][] [] [][][][
  []
 
 
-Overfull \hbox (8.875pt too wide) in paragraph at lines 1405--1405
+Overfull \hbox (8.875pt too wide) in paragraph at lines 1396--1396
 [][][][][][][][][][][] [] [][][][] [] [][][][][][] [][] [][][][][][][][] [] [][
 ][][][][][]$[] \TU/TimesNewRoman(1)/m/n/12 ([]επίσκεψη []30/03/2020). 
  []
@@ -1453,15 +1452,15 @@ braces):
 >  {english/babelname}  =>  {american}
 >  {english/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {english/Localnumeral}  =>  {polyglossia@C@localnumeral}.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1406.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1397.
  [74]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1406.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1397.
  (./testUTF.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1406.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1406.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1397.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1397.
 
 Package rerunfilecheck Info: File `testUTF.out' has not changed.
-(rerunfilecheck)             Checksum: 358609A08106550B54B2A46F8DD4769C;13848.
+(rerunfilecheck)             Checksum: 3B1AB998C07DC919EB3D215C917DAF24;13631.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1474,10 +1473,10 @@ Package logreq Info: Writing requests to 'testUTF.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26726 strings out of 479277
- 512160 string characters out of 5877703
- 1297953 words of memory out of 5000000
- 44015 multiletter control sequences out of 15000+600000
+ 26723 strings out of 479277
+ 512099 string characters out of 5877703
+ 1297926 words of memory out of 5000000
+ 44012 multiletter control sequences out of 15000+600000
  537558 words of font info for 94 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  65i,11n,100p,1152b,4856s stack positions out of 5000i,500n,10000p,200000b,80000s
